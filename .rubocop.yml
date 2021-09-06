@@ -1,0 +1,6 @@
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'app/models/application_record.rb'
+    - 'config/application.rb'
+    - 'db/*'
