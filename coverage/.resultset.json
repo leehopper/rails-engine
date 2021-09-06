@@ -302,6 +302,15 @@
           null
         ]
       },
+      "/Users/mainframe/turing/3module/projects/rails-engine/spec/factories/merchants.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/mainframe/turing/3module/projects/rails-engine/config/routes.rb": {
         "lines": [
           1,
@@ -491,8 +500,13 @@
           1,
           null
         ]
+      },
+      "/Users/mainframe/turing/3module/projects/rails-engine/spec/requests/api/v1/merchants_request_spec.rb": {
+        "lines": [
+          1
+        ]
       }
     },
-    "timestamp": 1630964138
+    "timestamp": 1630965111
   }
 }
