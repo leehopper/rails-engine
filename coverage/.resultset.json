@@ -3,6 +3,8 @@
     "coverage": {
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/customer_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -21,46 +23,50 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/rails_helper.rb": {
         "lines": [
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           null,
           null,
           1,
           1,
+          1,
+          null,
+          1,
+          1,
+          null,
           1,
           1,
           null,
           null,
           null,
           null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
           null,
           0,
           0,
+          null,
           null,
           1,
           1,
@@ -101,6 +107,8 @@
       "/Users/mainframe/turing/3module/projects/rails-engine/config/environment.rb": {
         "lines": [
           null,
+          null,
+          null,
           1,
           null,
           null,
@@ -109,6 +117,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/config/application.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -148,6 +158,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/config/boot.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -156,6 +168,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/config/environments/test.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null,
@@ -213,11 +227,13 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/config/initializers/backtrace_silencers.rb": {
         "lines": [
+          null,
           null,
           null,
           null,
@@ -244,11 +260,14 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/config/initializers/filter_parameter_logging.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -272,6 +291,7 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
@@ -280,11 +300,14 @@
           null,
           null,
           null,
+          null,
           null
         ]
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/config/initializers/wrap_parameters.rb": {
         "lines": [
+          null,
+          null,
           null,
           null,
           null,
@@ -303,6 +326,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/factories/merchants.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -312,6 +337,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/config/routes.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           null
@@ -319,6 +346,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/app/models/customer.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -327,6 +356,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null
@@ -334,6 +365,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/invoice_item_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -358,6 +391,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/app/models/invoice_item.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -370,6 +405,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/invoice_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -388,6 +425,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/app/models/invoice.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -400,6 +439,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/item_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -425,6 +466,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/app/models/item.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -437,6 +480,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/merchant_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -455,6 +500,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/app/models/merchant.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -467,6 +514,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/transaction_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -491,6 +540,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/app/models/transaction.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -502,10 +553,12 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/requests/api/v1/merchants_request_spec.rb": {
         "lines": [
+          null,
+          null,
           1
         ]
       }
     },
-    "timestamp": 1630965293
+    "timestamp": 1630966992
   }
 }
