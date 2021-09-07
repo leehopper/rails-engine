@@ -78,7 +78,7 @@ describe 'Merchants API' do
         expect(merchants.count).to eq(0)
         expect(merchants).to be_an(Array)
       end
-      
+
       it 'sends merchants with default page 1 for page number less than 1' do
         get '/api/v1/merchants?page=0'
 
