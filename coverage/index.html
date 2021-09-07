@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-09-07T15:48:30-06:00">2021-09-07T15:48:30-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-09-07T16:18:29-06:00">2021-09-07T16:18:29-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -183,7 +183,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#303f76f7cffd0a68c6cd808f71b66844bf098fee" class="src_link" title="app/serializers/merchant_serializer.rb">app/serializers/merchant_serializer.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">17</td>
+            <td class="cell--number">12</td>
             <td class="cell--number">4</td>
             <td class="cell--number">4</td>
             <td class="cell--number">0</td>
@@ -1909,13 +1909,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="3">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="3">
+            
             
 
             
 
-            <code class="ruby">class MerchantSerializer</code>
+            <code class="ruby"># Serializer for merchant controller</code>
           </li>
         </div>
       
@@ -1926,18 +1926,18 @@
 
             
 
-            <code class="ruby">  def self.format_merchants(merchants)</code>
+            <code class="ruby">class MerchantSerializer</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="5">
-            
-            
-
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
             
 
-            <code class="ruby">    {</code>
+            
+
+            <code class="ruby">  def self.format_merchants(merchants)</code>
           </li>
         </div>
       
@@ -1948,29 +1948,29 @@
 
             
 
-            <code class="ruby">      data: merchants.map do |merchant|</code>
+            <code class="ruby">    { data: merchants.map do |merchant|</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="7">
-            
-            
-
-            
-
-            <code class="ruby">        {</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="76" data-linenumber="8">
+          <li class="covered" data-hits="76" data-linenumber="7">
             <span class="hits">76</span>
             
 
             
 
-            <code class="ruby">          id: merchant.id.to_s,</code>
+            <code class="ruby">              { id: merchant.id.to_s,</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby">                type: &#39;merchant&#39;,</code>
           </li>
         </div>
       
@@ -1981,7 +1981,7 @@
 
             
 
-            <code class="ruby">          type: &#39;merchant&#39;,</code>
+            <code class="ruby">                attributes: { name: merchant.name } }</code>
           </li>
         </div>
       
@@ -1992,7 +1992,7 @@
 
             
 
-            <code class="ruby">          attributes: {</code>
+            <code class="ruby">            end }</code>
           </li>
         </div>
       
@@ -2003,67 +2003,12 @@
 
             
 
-            <code class="ruby">            name: merchant.name</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="12">
-            
-            
-
-            
-
-            <code class="ruby">          }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="13">
-            
-            
-
-            
-
-            <code class="ruby">        }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="14">
-            
-            
-
-            
-
-            <code class="ruby">      end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby">    }</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
             <code class="ruby">  end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="17">
+          <li class="never" data-hits="" data-linenumber="12">
             
             
 
