@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/customer_spec.rb": {
+      "/Users/mainframe/turing/3module/projects/rails-engine/spec/requests/api/v1/merchants_request_spec.rb": {
         "lines": [
           null,
           null,
@@ -9,14 +9,62 @@
           null,
           1,
           1,
-          2,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           1,
           1,
-          2,
-          2,
           null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
           null,
           null
         ]
@@ -315,7 +363,7 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
           null,
           null,
@@ -330,7 +378,7 @@
           null,
           1,
           1,
-          1,
+          26,
           null,
           null
         ]
@@ -340,160 +388,10 @@
           null,
           null,
           1,
-          null,
-          null
-        ]
-      },
-      "/Users/mainframe/turing/3module/projects/rails-engine/app/models/customer.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/mainframe/turing/3module/projects/rails-engine/app/models/application_record.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/invoice_item_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          1,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          2,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/mainframe/turing/3module/projects/rails-engine/app/models/invoice_item.rb": {
-        "lines": [
-          null,
-          null,
           1,
           1,
           1,
           null,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/invoice_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/mainframe/turing/3module/projects/rails-engine/app/models/invoice.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/item_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          1,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          null,
-          null,
-          null
-        ]
-      },
-      "/Users/mainframe/turing/3module/projects/rails-engine/app/models/item.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/merchant_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
           null,
           null
         ]
@@ -509,56 +407,47 @@
           1,
           null,
           1,
-          null
-        ]
-      },
-      "/Users/mainframe/turing/3module/projects/rails-engine/spec/models/transaction_spec.rb": {
-        "lines": [
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          2,
-          null,
-          null,
-          1,
-          1,
-          2,
-          2,
-          2,
-          null,
-          null,
-          1,
-          2,
-          2,
           null,
           null,
           null
         ]
       },
-      "/Users/mainframe/turing/3module/projects/rails-engine/app/models/transaction.rb": {
+      "/Users/mainframe/turing/3module/projects/rails-engine/app/models/application_record.rb": {
         "lines": [
           null,
           null,
           1,
-          1,
-          null,
-          1,
-          null,
           1,
           null
         ]
       },
-      "/Users/mainframe/turing/3module/projects/rails-engine/spec/requests/api/v1/merchants_request_spec.rb": {
+      "/Users/mainframe/turing/3module/projects/rails-engine/app/controllers/api/v1/merchants_controller.rb": {
+        "lines": [
+          1,
+          1,
+          4,
+          1,
+          3,
+          2,
+          1,
+          1,
+          null,
+          0,
+          null,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/mainframe/turing/3module/projects/rails-engine/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
-          1
+          1,
+          null
         ]
       }
     },
-    "timestamp": 1630966992
+    "timestamp": 1630975230
   }
 }
