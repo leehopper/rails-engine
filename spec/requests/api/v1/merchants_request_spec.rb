@@ -10,7 +10,7 @@ describe 'Merchants API' do
 
     expect(response).to be_successful
 
-    merchants = JSON.parse(response.body, symbolize_names: true)
+    merchants = JSON.parse(response.body, symbolize_names: true)[:data]
 
     expect(merchants.count).to eq(20)
 
@@ -18,11 +18,17 @@ describe 'Merchants API' do
       expect(merchant).to have_key(:id)
       expect(merchant[:id]).to be_an(Integer)
 
-      expect(merchant).to have_key(:name)
-      expect(merchant[:name]).to be_an(String)
+      expect(merchant).to have_key(:type)
+      expect(merchant[:type]).to eq('merchant')
 
-      # expect(merchant).to_not have_key(:created_at)
-      # expect(merchant).to_not have_key(:updated_at)
+      expect(merchant).to have_key(:attributes)
+      expect(merchant[:attributes]).to be_an(Hash)
+
+      expect(merchant[:attributes]).to have_key(:name)
+      expect(merchant[:attributes][:name]).to be_an(String)
+
+      expect(merchant).to_not have_key(:created_at)
+      expect(merchant).to_not have_key(:updated_at)
     end
   end
 
@@ -33,7 +39,7 @@ describe 'Merchants API' do
 
     expect(response).to be_successful
 
-    merchants = JSON.parse(response.body, symbolize_names: true)
+    merchants = JSON.parse(response.body, symbolize_names: true)[:data]
 
     expect(merchants.count).to eq(10)
 
@@ -41,7 +47,7 @@ describe 'Merchants API' do
 
     expect(response).to be_successful
 
-    merchants = JSON.parse(response.body, symbolize_names: true)
+    merchants = JSON.parse(response.body, symbolize_names: true)[:data]
 
     expect(merchants.count).to eq(21)
 
@@ -49,7 +55,7 @@ describe 'Merchants API' do
 
     expect(response).to be_successful
 
-    merchants = JSON.parse(response.body, symbolize_names: true)
+    merchants = JSON.parse(response.body, symbolize_names: true)[:data]
 
     expect(merchants.count).to eq(5)
 
@@ -57,8 +63,9 @@ describe 'Merchants API' do
 
     expect(response).to be_successful
 
-    merchants = JSON.parse(response.body, symbolize_names: true)
+    merchants = JSON.parse(response.body, symbolize_names: true)[:data]
 
     expect(merchants.count).to eq(0)
+    expect(merchants).to be_an(Array)
   end
 end
