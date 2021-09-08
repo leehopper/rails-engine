@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 module Api
   module V1
     # Controller to return merchant json data
@@ -9,10 +8,18 @@ module Api
         render json: MerchantSerializer.format_merchants(merchants)
       end
 
-      private
+      def show
+        merchant = Merchant.find(id_param[:id])
+        render json: MerchantSerializer.format_merchant(merchant)
+      end
 
+      private
       def page_params
         params.permit(:page, :per_page)
+      end
+
+      def id_param
+        params.permit(:id)
       end
     end
   end
