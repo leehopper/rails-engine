@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 module Api
   module V1
     # Controller to return merchant json data
@@ -14,6 +15,7 @@ module Api
       end
 
       private
+
       def page_params
         params.permit(:page, :per_page)
       end
