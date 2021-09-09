@@ -8,5 +8,11 @@ class Merchant < ApplicationRecord
 
   validates_presence_of :name
 
-  # self.per_page = 20
+  # def self.query_by_id(id)
+  #   if find_by(id: id).present?
+  #     Merchant.find_by(id: id)
+  #   else
+  #     ErrorDataRecord.new("No merchants found with id: #{id}", "NOT FOUND", 404)
+  #   end
+  # end
 end
