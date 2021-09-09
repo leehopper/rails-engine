@@ -6,12 +6,12 @@ module Api
     class MerchantsController < ApplicationController
       def index
         merchants = MerchantFacade.get_merchants(page_params[:page], page_params[:per_page])
-        render json: MerchantSerializer.format_merchants(merchants)
+        render json: MerchantSerializer.new(merchants, is_collection: true)
       end
 
       def show
         merchant = Merchant.find(id_param[:id])
-        render json: MerchantSerializer.format_merchant(merchant)
+        render json: MerchantSerializer.new(merchant).serializable_hash
       end
 
       private
