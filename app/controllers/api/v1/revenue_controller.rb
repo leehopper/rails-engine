@@ -5,7 +5,7 @@ module Api
     class RevenueController < ApplicationController
       def top_merchants
         merchants = Merchant.top_merchants_by_revenue(quantity_param[:quantity])
-        render json: MerchantSerializer.new(merchants, is_collection: true)
+        render json: RevenueMerchantsSerializer.new(merchants, is_collection: true)
       end
 
       private

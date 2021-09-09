@@ -17,6 +17,12 @@ class Merchant < ApplicationRecord
     .limit(count)
   end
 
+  def revenue
+    invoice_items.total_revenue.sum do |ii|
+      ii.revenue
+    end
+  end
+
   # def self.query_by_id(id)
   #   if find_by(id: id).present?
   #     Merchant.find_by(id: id)

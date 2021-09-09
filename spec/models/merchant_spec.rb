@@ -51,4 +51,18 @@ RSpec.describe Merchant, type: :model do
       end
     end
   end
+
+  describe 'instance methods' do
+    describe '.revenue' do
+      it 'returns the revenue for a merchant' do
+        merchant = create(:merchant, :with_items, item_count: 2)
+        invoice_item_1 = create(:invoice_item, item: merchant.items.first, quantity: 10, unit_price: 10)
+        invoice_item_2 = create(:invoice_item, item: merchant.items.second, quantity: 5, unit_price: 5)
+        create(:transaction, invoice: invoice_item_1.invoice)
+        create(:transaction, invoice: invoice_item_2.invoice)
+
+        expect(merchant.revenue).to eq(125.0)
+      end
+    end
+  end
 end

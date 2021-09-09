@@ -39,6 +39,7 @@ RSpec.describe 'Merchants API' do
         expected.each_with_index do |merchant, index|
           expect(merchants[index][:id]).to eq(merchant.id.to_s)
           expect(merchants[index][:attributes][:name]).to eq(merchant.name)
+          expect(merchants[index][:attributes][:revenue]).to eq(merchant.revenue)
         end
       end
     end
