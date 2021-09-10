@@ -17,6 +17,15 @@ class Merchant < ApplicationRecord
       .limit(count)
   end
 
+  def self.name_query(input)
+    where(
+    Merchant.arel_table[:name]
+    .lower
+    .matches("%#{input.downcase}%")
+    )
+    .order(:name)
+  end
+
   def revenue
     invoice_items.total_revenue.sum(&:revenue)
   end

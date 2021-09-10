@@ -132,4 +132,40 @@ describe 'Search API' do
       end
     end
   end
+
+  describe 'get merchants' do
+    context 'happy path' do
+      it 'returns merchants by name' do
+        create(:merchant, name: 'Frodo')
+        create(:merchant, name: 'Bill')
+        create(:merchant, name: 'Bilbo')
+        create(:merchant, name: 'Merry')
+        create(:merchant, name: 'Pippin')
+        create(:merchant, name: 'James Billie')
+
+        get '/api/v1/merchants/find_all?name=bil'
+
+        expect(response).to be_successful
+
+        merchants = JSON.parse(response.body, symbolize_names: true)[:data]
+
+        merchants.each do |merchant|
+          expect(merchant).to have_key(:id)
+          expect(merchant[:id]).to be_an(String)
+
+          expect(merchant).to have_key(:type)
+          expect(merchant[:type]).to eq('merchant')
+
+          expect(merchant).to have_key(:attributes)
+          expect(merchant[:attributes]).to be_an(Hash)
+
+          expect(merchant[:attributes]).to have_key(:name)
+          expect(merchant[:attributes][:name]).to be_an(String)
+
+          expect(merchant).to_not have_key(:created_at)
+          expect(merchant).to_not have_key(:updated_at)
+        end
+      end
+    end
+  end
 end

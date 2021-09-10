@@ -50,6 +50,19 @@ RSpec.describe Merchant, type: :model do
         expect(Merchant.top_merchants_by_revenue(5)).to_not include(not_expected_merchant)
       end
     end
+
+    describe '#name_query' do
+      it 'returns merchants by name' do
+        create(:merchant, name: 'Frodo')
+        m2 = create(:merchant, name: 'Bill')
+        m1 = create(:merchant, name: 'Bilbo')
+        create(:merchant, name: 'Merry')
+        create(:merchant, name: 'Pippin')
+        m3 = create(:merchant, name: 'James Billie')
+
+        expect(Merchant.name_query('bil')).to eq([m1, m2, m3])
+      end
+    end
   end
 
   describe 'instance methods' do

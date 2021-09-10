@@ -9,9 +9,18 @@ module Api
         render json: ItemSerializer.new(item)
       end
 
+      def merchant_index
+        merchants = Merchant.name_query(merchant_param[:name])
+        render json: MerchantSerializer.new(merchants, is_collection: true)
+      end
+
       private
       def item_params
         params.permit(:name, :min_price, :max_price)
+      end
+
+      def merchant_param
+        params.permit(:name)
       end
     end
   end
