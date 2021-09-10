@@ -2,21 +2,10 @@
 
 require 'rails_helper'
 
-RSpec.describe Merchant, type: :model do
-  describe 'relationships' do
-    it { should have_many(:items) }
-    it { should have_many(:invoice_items).through(:items) }
-    it { should have_many(:invoices).through(:invoice_items) }
-    it { should have_many(:transactions).through(:invoices) }
-  end
-
-  describe 'validations' do
-    it { should validate_presence_of(:name) }
-  end
-
-  describe 'class methods' do
-    describe '#top_merchants_by_revenue' do
-      it 'returns a variable number of merchants ranked in order by total revenue' do
+RSpec.describe 'Merchants API' do
+  describe 'get all merchants' do
+    context 'happy path' do
+      it 'returns a variable number of merchants ordered by revenue' do
         merchant1 = create(:merchant, :with_items, item_count: 1)
         m1_invoice_item = create(:invoice_item, item: merchant1.items.first, quantity: 10, unit_price: 10)
         create(:transaction, invoice: m1_invoice_item.invoice)
@@ -41,27 +30,19 @@ RSpec.describe Merchant, type: :model do
         m5_invoice_item = create(:invoice_item, item: merchant5.items.first, quantity: 1, unit_price: 10)
         create(:transaction, invoice: m5_invoice_item.invoice)
 
-        not_expected_merchant = create(:merchant, :with_items, item_count: 1)
-        ne_invoice_item = create(:invoice_item, item: not_expected_merchant.items.first, quantity: 1, unit_price: 5)
-        create(:transaction, invoice: ne_invoice_item.invoice)
+        get '/api/v1/revenue/merchants?quantity=5'
 
-        expect(Merchant.top_merchants_by_revenue(5)).to eq([merchant1, merchant2, merchant3, merchant4, merchant5])
+        merchants = JSON.parse(response.body, symbolize_names: true)[:data]
 
-        expect(Merchant.top_merchants_by_revenue(5)).to_not include(not_expected_merchant)
-      end
-    end
-  end
+        expect(merchants.count).to eq(5)
 
-  describe 'instance methods' do
-    describe '.revenue' do
-      it 'returns the revenue for a merchant' do
-        merchant = create(:merchant, :with_items, item_count: 2)
-        invoice_item1 = create(:invoice_item, item: merchant.items.first, quantity: 10, unit_price: 10)
-        invoice_item2 = create(:invoice_item, item: merchant.items.second, quantity: 5, unit_price: 5)
-        create(:transaction, invoice: invoice_item1.invoice)
-        create(:transaction, invoice: invoice_item2.invoice)
+        expected = [merchant1, merchant2, merchant3, merchant4, merchant5]
 
-        expect(merchant.revenue).to eq(125.0)
+        expected.each_with_index do |merchant, index|
+          expect(merchants[index][:id]).to eq(merchant.id.to_s)
+          expect(merchants[index][:attributes][:name]).to eq(merchant.name)
+          expect(merchants[index][:attributes][:revenue]).to eq(merchant.revenue)
+        end
       end
     end
   end

@@ -8,4 +8,6 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  get '/api/v1/revenue/merchants', to: 'api/v1/revenue#top_merchants'
 end

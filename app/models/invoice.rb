@@ -7,4 +7,11 @@ class Invoice < ApplicationRecord
   belongs_to :customer
 
   validates_presence_of :status
+
+  def self.total_revenue
+    joins(:transactions, :invoice_items)
+      .where(transactions: { result: 'success' }, status: 'shipped')
+      .group(:id)
+      .select('sum(invoice_items.quantity * invoice_items.unit_price) as revenue')
+  end
 end
