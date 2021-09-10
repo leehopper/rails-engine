@@ -43,5 +43,53 @@ RSpec.describe Item, type: :model do
         expect(Item.by_revenue(4).last.revenue).to eq(25)
       end
     end
+
+    describe '#name_query' do
+      it 'returns single record and first alphabetically' do
+        create(:item, name: 'Bill')
+        create(:item, name: 'Frodo')
+        create(:item, name: 'Merry')
+        item = create(:item, name: 'Bilbo')
+        create(:item, name: 'Pippin')
+
+        expect(Item.name_query('bil')).to eq(item)
+      end
+    end
+
+    describe '#min_price_query' do
+      it 'returns single record and first alphabetically' do
+        create(:item, name: 'C', unit_price: 10)
+        create(:item, name: 'D', unit_price: 20)
+        create(:item, name: 'E', unit_price: 30)
+        item = create(:item, name: 'A', unit_price: 40)
+        create(:item, name: 'B', unit_price: 50)
+
+        expect(Item.min_price_query(25)).to eq(item)
+      end
+    end
+
+    describe '#max_price_query' do
+      it 'returns single record and first alphabetically' do
+        create(:item, name: 'C', unit_price: 10)
+        create(:item, name: 'D', unit_price: 20)
+        create(:item, name: 'E', unit_price: 30)
+        item = create(:item, name: 'A', unit_price: 40)
+        create(:item, name: 'B', unit_price: 50)
+
+        expect(Item.max_price_query(40)).to eq(item)
+      end
+    end
+
+    describe 'range_price_query' do
+      it 'returns single record and first alphabetically' do
+        create(:item, name: 'C', unit_price: 10)
+        create(:item, name: 'D', unit_price: 20)
+        create(:item, name: 'E', unit_price: 30)
+        item = create(:item, name: 'A', unit_price: 40)
+        create(:item, name: 'B', unit_price: 50)
+
+        expect(Item.range_price_query(20, 50)).to eq(item)
+      end
+    end
   end
 end
