@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 module Api
   module V1
@@ -9,6 +10,7 @@ module Api
       end
 
       private
+
       def quantity_param
         params.permit(:quantity)
       end

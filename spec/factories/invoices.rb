@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :invoice do
     status { 'shipped' }
@@ -19,7 +21,7 @@ FactoryBot.define do
       end
 
       after(:create) do |invoice, evaluator|
-        create_list(:transaction, evaluator.transaction_count, invoice: invoice, result: 'failed' )
+        create_list(:transaction, evaluator.transaction_count, invoice: invoice, result: 'failed')
       end
     end
 

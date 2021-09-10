@@ -9,18 +9,16 @@ class Merchant < ApplicationRecord
   validates_presence_of :name
 
   def self.top_merchants_by_revenue(count)
-    joins(items: {invoice_items: {invoice: :transactions}})
-    .select("merchants.*, sum(invoice_items.quantity * invoice_items.unit_price) as revenue")
-    .group(:id)
-    .where(transactions: { result: :success})
-    .order(revenue: :desc)
-    .limit(count)
+    joins(items: { invoice_items: { invoice: :transactions } })
+      .select('merchants.*, sum(invoice_items.quantity * invoice_items.unit_price) as revenue')
+      .group(:id)
+      .where(transactions: { result: :success })
+      .order(revenue: :desc)
+      .limit(count)
   end
 
   def revenue
-    invoice_items.total_revenue.sum do |ii|
-      ii.revenue
-    end
+    invoice_items.total_revenue.sum(&:revenue)
   end
 
   # def self.query_by_id(id)

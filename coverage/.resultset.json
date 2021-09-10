@@ -326,6 +326,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/factories/customers.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           22,
@@ -336,6 +338,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/factories/invoice_items.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           1,
@@ -348,6 +352,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/factories/invoices.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           22,
@@ -455,6 +461,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/factories/transactions.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           22,
@@ -745,8 +753,6 @@
           null,
           1,
           11,
-          16,
-          null,
           null,
           null,
           null,
@@ -985,6 +991,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/spec/requests/api/v1/revenue/top_merchants_request_spec.rb": {
         "lines": [
+          null,
+          null,
           1,
           null,
           1,
@@ -1155,6 +1163,7 @@
       "/Users/mainframe/turing/3module/projects/rails-engine/app/controllers/api/v1/revenue_controller.rb": {
         "lines": [
           null,
+          null,
           1,
           1,
           null,
@@ -1165,6 +1174,7 @@
           null,
           null,
           1,
+          null,
           1,
           1,
           null,
@@ -1175,6 +1185,8 @@
       },
       "/Users/mainframe/turing/3module/projects/rails-engine/app/serializers/revenue_merchants_serializer.rb": {
         "lines": [
+          null,
+          null,
           1,
           1,
           null,
@@ -1184,6 +1196,6 @@
         ]
       }
     },
-    "timestamp": 1631231661
+    "timestamp": 1631232045
   }
 }
