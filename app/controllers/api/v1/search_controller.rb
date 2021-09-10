@@ -6,7 +6,11 @@ module Api
     class SearchController < ApplicationController
       def item_show
         item = SearchFacade.get_item(item_params)
-        render json: ItemSerializer.new(item)
+        if item.class == Item
+          render json: ItemSerializer.new(item)
+        else
+          render json: ErrorDataRecordSerializer.new(item).serialized_json
+        end
       end
 
       def merchant_index
