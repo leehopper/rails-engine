@@ -1,7 +1,4 @@
 # frozen_string_literal: true
-
-# expect{Item.find(item.id)}.to raise_error(ActiveRecord::RecordNotFound)
-
 require 'rails_helper'
 
 describe 'Merchants API' do

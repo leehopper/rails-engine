@@ -43,5 +43,17 @@ RSpec.describe Item, type: :model do
         expect(Item.by_revenue(4).last.revenue).to eq(25)
       end
     end
+
+    describe 'name_query' do
+      it 'returns single record and first alphabetically' do
+        create(:item, name: 'Bill')
+        create(:item, name: 'Frodo')
+        create(:item, name: 'Merry')
+        item = create(:item, name: 'Bilbo')
+        create(:item, name: 'Pippin')
+
+        expect(Item.name_query('bil')).to eq(item)
+      end
+    end
   end
 end

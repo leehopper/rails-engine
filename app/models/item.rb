@@ -18,6 +18,16 @@ class Item < ApplicationRecord
     .limit(count)
   end
 
+  def self.name_query(input)
+    where(
+    Item.arel_table[:name]
+    .lower
+    .matches("%#{input.downcase}%")
+    )
+    .order(:name)
+    .first
+  end
+
   def revenue
     invoice_items.total_revenue.sum(&:revenue)
   end
