@@ -17,4 +17,8 @@ class Item < ApplicationRecord
     .order(revenue: :desc)
     .limit(count)
   end
+
+  def revenue
+    invoice_items.total_revenue.sum(&:revenue)
+  end
 end

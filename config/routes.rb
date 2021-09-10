@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   get '/api/v1/revenue/merchants', to: 'api/v1/revenue#merchant_index'
   get '/api/v1/revenue/merchants/:id', to: 'api/v1/revenue#merchant_show'
   get '/api/v1/revenue/unshipped', to: 'api/v1/revenue#invoice_index'
+  get '/api/v1/revenue/items', to: 'api/v1/revenue#item_index'
 end

@@ -19,6 +19,11 @@ module Api
         render json: RevenueInvoicesSerializer.new(invoices, is_collection: true)
       end
 
+      def item_index
+        items = Item.by_revenue(quantity_param[:quantity])
+        render json: RevenueItemSerializer.new(items, is_collection: true)
+      end
+
       private
       def quantity_param
         params.permit(:quantity)
