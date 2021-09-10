@@ -28,6 +28,24 @@ class Item < ApplicationRecord
     .first
   end
 
+  def self.min_price_query(min)
+    where('unit_price >= ?', "#{min}")
+    .order(:name)
+    .first
+  end
+
+  def self.max_price_query(max)
+    where('unit_price <= ?', "#{max}")
+    .order(:name)
+    .first
+  end
+
+  def self.range_price_query(min, max)
+    where(unit_price: min..max)
+    .order(:name)
+    .first
+  end
+
   def revenue
     invoice_items.total_revenue.sum(&:revenue)
   end

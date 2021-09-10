@@ -14,5 +14,5 @@ Rails.application.routes.draw do
   get '/api/v1/revenue/unshipped', to: 'api/v1/revenue#invoice_index'
   get '/api/v1/revenue/items', to: 'api/v1/revenue#item_index'
 
-  get '/api/vi/items/find', to: 'api/v1/search#item_show'
+  get '/api/v1/items/find', to: 'api/v1/search#item_show'
 end
