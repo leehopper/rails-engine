@@ -15,6 +15,7 @@ module Api
       end
 
       private
+
       def item_params
         params.permit(:name, :min_price, :max_price)
       end

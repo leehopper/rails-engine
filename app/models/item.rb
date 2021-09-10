@@ -11,39 +11,39 @@ class Item < ApplicationRecord
 
   def self.by_revenue(count)
     joins(:invoice_items, :invoices, :transactions)
-    .where(transactions: { result: 'success' }, invoices: { status: 'shipped' })
-    .group(:id)
-    .select('items.*, sum(invoice_items.unit_price * invoice_items.quantity) as revenue')
-    .order(revenue: :desc)
-    .limit(count)
+      .where(transactions: { result: 'success' }, invoices: { status: 'shipped' })
+      .group(:id)
+      .select('items.*, sum(invoice_items.unit_price * invoice_items.quantity) as revenue')
+      .order(revenue: :desc)
+      .limit(count)
   end
 
   def self.name_query(input)
     where(
-    Item.arel_table[:name]
-    .lower
-    .matches("%#{input.downcase}%")
+      Item.arel_table[:name]
+      .lower
+      .matches("%#{input.downcase}%")
     )
-    .order(:name)
-    .first
+      .order(:name)
+      .first
   end
 
   def self.min_price_query(min)
-    where('unit_price >= ?', "#{min}")
-    .order(:name)
-    .first
+    where('unit_price >= ?', min.to_s)
+      .order(:name)
+      .first
   end
 
   def self.max_price_query(max)
-    where('unit_price <= ?', "#{max}")
-    .order(:name)
-    .first
+    where('unit_price <= ?', max.to_s)
+      .order(:name)
+      .first
   end
 
   def self.range_price_query(min, max)
     where(unit_price: min..max)
-    .order(:name)
-    .first
+      .order(:name)
+      .first
   end
 
   def revenue

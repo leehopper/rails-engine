@@ -19,11 +19,11 @@ class Merchant < ApplicationRecord
 
   def self.name_query(input)
     where(
-    Merchant.arel_table[:name]
-    .lower
-    .matches("%#{input.downcase}%")
+      Merchant.arel_table[:name]
+      .lower
+      .matches("%#{input.downcase}%")
     )
-    .order(:name)
+      .order(:name)
   end
 
   def revenue

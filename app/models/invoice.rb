@@ -8,21 +8,14 @@ class Invoice < ApplicationRecord
 
   validates_presence_of :status
 
-  def self.total_revenue
-    joins(:transactions, :invoice_items)
-      .where(transactions: { result: 'success' }, status: 'shipped')
-      .group(:id)
-      .select('sum(invoice_items.quantity * invoice_items.unit_price) as revenue')
-  end
-
   def self.by_unshipped_revenue(count)
     joins(:transactions, :invoice_items)
-    .where(transactions: { result: 'success' })
-    .where.not(status: 'shipped')
-    .group(:id)
-    .select('invoices.*, sum(invoice_items.unit_price * invoice_items.quantity) as potential_revenue')
-    .order(potential_revenue: :desc)
-    .limit(count)
+      .where(transactions: { result: 'success' })
+      .where.not(status: 'shipped')
+      .group(:id)
+      .select('invoices.*, sum(invoice_items.unit_price * invoice_items.quantity) as potential_revenue')
+      .order(potential_revenue: :desc)
+      .limit(count)
   end
 
   def revenue
