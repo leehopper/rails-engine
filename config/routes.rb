@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/api/v1/revenue/merchants', to: 'api/v1/revenue#top_merchants'
+  get '/api/v1/revenue/merchants', to: 'api/v1/revenue#merchant_index'
+  get '/api/v1/revenue/merchants/:id', to: 'api/v1/revenue#merchant_show'
+
 end
