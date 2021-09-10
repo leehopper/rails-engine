@@ -34,5 +34,26 @@ RSpec.describe Invoice do
         expect(Invoice.total_unshipped_revenue(3)).to eq(300)
       end
     end
+    describe '#unshipped_revenue' do
+      it 'returns array of unshipped invoices with revenue attribute' do
+        i1 = create(:invoice, :with_transactions, status: 'pending')
+        i2 = create(:invoice, :with_transactions, status: 'pending')
+        i3 = create(:invoice, :with_transactions, status: 'pending')
+        i4 = create(:invoice, :with_transactions, status: 'pending')
+        i5 = create(:invoice, :with_transactions, status: 'pending')
+        i6 = create(:invoice, :with_transactions)
+
+        create(:invoice_item, quantity: 10, unit_price: 5, invoice: i1)
+        create(:invoice_item, quantity: 5, unit_price: 5, invoice: i2)
+        create(:invoice_item, quantity: 10, unit_price: 10, invoice: i3)
+        create(:invoice_item, quantity: 1, unit_price: 1, invoice: i4)
+        create(:invoice_item, quantity: 15, unit_price: 10, invoice: i5)
+        create(:invoice_item, quantity: 100, unit_price: 1000, invoice: i6)
+
+        expect(Invoice.unshipped_revenue(3).first.revenue).to eq(150)
+        expect(Invoice.unshipped_revenue(3).second.revenue).to eq(100)
+        expect(Invoice.unshipped_revenue(3).third.revenue).to eq(50)
+      end
+    end
   end
 end
