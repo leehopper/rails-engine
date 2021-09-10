@@ -10,7 +10,7 @@ class ErrorDataRecordSerializer
     {
       data: {
         status: @error_object.status,
-        messsage: @error_object.error_message,
+        message: @error_object.error_message,
         code: @error_object.code
       }
     }
