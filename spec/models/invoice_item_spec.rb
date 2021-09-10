@@ -33,7 +33,7 @@ RSpec.describe InvoiceItem, type: :model do
         create(:invoice_item, quantity: 10, unit_price: 10, invoice: i3)
         create(:invoice_item, quantity: 5, unit_price: 5, invoice: i4)
 
-        Invoice.all.total_revenue.each do |ii|
+        InvoiceItem.all.total_revenue.each do |ii|
           expect(ii.revenue).to eq(100)
         end
       end

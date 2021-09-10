@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Merchants API' do
-  describe 'get all merchants' do
+RSpec.describe 'Revenue API' do
+  describe 'get top merchants by revenue ' do
     context 'happy path' do
       it 'returns a variable number of merchants ordered by revenue' do
         merchant1 = create(:merchant, :with_items, item_count: 1)
@@ -33,6 +33,8 @@ RSpec.describe 'Merchants API' do
         get '/api/v1/revenue/merchants?quantity=5'
 
         merchants = JSON.parse(response.body, symbolize_names: true)[:data]
+
+        expect(response).to be_successful
 
         expect(merchants.count).to eq(5)
 
