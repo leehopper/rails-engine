@@ -4,12 +4,12 @@ RSpec.describe 'Revenue API' do
   describe 'total revenue of scucessful invoices which have not shipped' do
     context 'happy path' do
       it 'returns a variable number of merchants ordered by revenue' do
-        i1 = create(:invoice, status: 'pending')
-        i2 = create(:invoice, status: 'pending')
-        i3 = create(:invoice, status: 'pending')
-        i4 = create(:invoice, status: 'pending')
-        i5 = create(:invoice, status: 'pending')
-        i6 = create(:invoice)
+        i1 = create(:invoice, :with_transactions, status: 'pending')
+        i2 = create(:invoice, :with_transactions, status: 'pending')
+        i3 = create(:invoice, :with_transactions, status: 'pending')
+        i4 = create(:invoice, :with_transactions, status: 'pending')
+        i5 = create(:invoice, :with_transactions, status: 'pending')
+        i6 = create(:invoice, :with_transactions)
 
         create(:invoice_item, quantity: 10, unit_price: 10, invoice: i1)
         create(:invoice_item, quantity: 5, unit_price: 5, invoice: i2)
