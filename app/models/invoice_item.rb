@@ -14,4 +14,12 @@ class InvoiceItem < ApplicationRecord
       .group(:id)
       .select('sum(invoice_items.unit_price * invoice_items.quantity) as revenue')
   end
+
+  def self.total_revenue_unshipped
+    joins(invoice: :transactions)
+      .where(transactions: { result: 'success' })
+      .where.not(invoices: { status: 'shipped' })
+      .group(:id)
+      .select('sum(invoice_items.unit_price * invoice_items.quantity) as revenue')
+  end
 end

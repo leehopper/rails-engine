@@ -15,19 +15,17 @@ class Invoice < ApplicationRecord
       .select('sum(invoice_items.quantity * invoice_items.unit_price) as revenue')
   end
 
-  def self.total_unshipped_revenue(count)
-    unshipped_revenue(count).sum do |invoice|
-      invoice.revenue
-    end
-  end
-
-  def self.unshipped_revenue(count)
+  def self.by_unshipped_revenue(count)
     joins(:transactions, :invoice_items)
     .where(transactions: { result: 'success' })
     .where.not(status: 'shipped')
     .group(:id)
-    .select('sum(invoice_items.unit_price * invoice_items.quantity) as revenue')
-    .order(revenue: :desc)
+    .select('invoices.*, sum(invoice_items.unit_price * invoice_items.quantity) as potential_revenue')
+    .order(potential_revenue: :desc)
     .limit(count)
+  end
+
+  def revenue
+    invoice_items.total_revenue_unshipped.sum(&:revenue)
   end
 end

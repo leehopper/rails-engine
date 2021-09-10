@@ -14,6 +14,11 @@ module Api
         render json: RevenueMerchantSerializer.new(merchant).serializable_hash
       end
 
+      def invoice_index
+        invoices = Invoice.by_unshipped_revenue(quantity_param[:quantity])
+        render json: RevenueInvoicesSerializer.new(invoices, is_collection: true)
+      end
+
       private
       def quantity_param
         params.permit(:quantity)
