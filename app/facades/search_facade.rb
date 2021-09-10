@@ -2,11 +2,10 @@
 
 # The search facade
 class SearchFacade
-
   def self.get_item(input)
     item = find_item(input)
-    if item == nil
-      ErrorDataRecord.new("No item found with input", "NOT FOUND", 404)
+    if item.nil?
+      ErrorDataRecord.new('No item found with input', 'NOT FOUND', 404)
     else
       item
     end
