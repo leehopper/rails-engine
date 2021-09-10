@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class RevenueInvoicesSerializer
   include JSONAPI::Serializer
 

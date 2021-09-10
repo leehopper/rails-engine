@@ -10,6 +10,7 @@ module Api
       end
 
       private
+
       def id_param
         params.permit(:item_id)
       end

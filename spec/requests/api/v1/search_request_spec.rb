@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 describe 'Search API' do
@@ -129,6 +131,20 @@ describe 'Search API' do
 
         expect(item[:attributes]).to have_key(:unit_price)
         expect(item[:attributes][:unit_price]).to eq(i.unit_price)
+      end
+    end
+
+    context 'sad path' do
+      it 'returns error object with no matching record' do
+        get '/api/v1/items/find?name=Bil'
+
+        expect(response).to be_successful
+
+        error = JSON.parse(response.body, symbolize_names: true)[:data]
+
+        expect(error[:status]).to eq('NOT FOUND')
+        expect(error[:message]).to eq('No item found with input')
+        expect(error[:code]).to eq(404)
       end
     end
   end

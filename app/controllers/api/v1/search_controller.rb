@@ -6,7 +6,11 @@ module Api
     class SearchController < ApplicationController
       def item_show
         item = SearchFacade.get_item(item_params)
-        render json: ItemSerializer.new(item)
+        if item.instance_of?(Item)
+          render json: ItemSerializer.new(item)
+        else
+          render json: ErrorDataRecordSerializer.new(item).serialized_json
+        end
       end
 
       def merchant_index
@@ -15,6 +19,7 @@ module Api
       end
 
       private
+
       def item_params
         params.permit(:name, :min_price, :max_price)
       end

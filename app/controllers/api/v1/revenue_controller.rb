@@ -20,15 +20,16 @@ module Api
       end
 
       def item_index
-        if quantity_param[:quantity].present?
-          items = Item.by_revenue(quantity_param[:quantity])
-        else
-          items = Item.by_revenue(10)
-        end
+        items = if quantity_param[:quantity].present?
+                  Item.by_revenue(quantity_param[:quantity])
+                else
+                  Item.by_revenue(10)
+                end
         render json: RevenueItemSerializer.new(items, is_collection: true)
       end
 
       private
+
       def quantity_param
         params.permit(:quantity)
       end

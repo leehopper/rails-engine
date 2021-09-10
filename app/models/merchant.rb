@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Merchant Model
 class Merchant < ApplicationRecord
   has_many :items
   has_many :invoice_items, through: :items
@@ -19,11 +20,11 @@ class Merchant < ApplicationRecord
 
   def self.name_query(input)
     where(
-    Merchant.arel_table[:name]
-    .lower
-    .matches("%#{input.downcase}%")
+      Merchant.arel_table[:name]
+      .lower
+      .matches("%#{input.downcase}%")
     )
-    .order(:name)
+      .order(:name)
   end
 
   def revenue

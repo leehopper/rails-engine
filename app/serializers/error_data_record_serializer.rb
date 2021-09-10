@@ -8,14 +8,11 @@ class ErrorDataRecordSerializer
 
   def serialized_json
     {
-      errors: [
-        {
-          status: @error_object.status,
-          messsage: @error_object.error_message,
-          code: @error_object.code
-        }
-      ],
-      code: @error_object.code
+      data: {
+        status: @error_object.status,
+        message: @error_object.error_message,
+        code: @error_object.code
+      }
     }
   end
 end
