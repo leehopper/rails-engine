@@ -8,12 +8,13 @@ Rails.application.routes.draw do
 
   get '/api/v1/items/find', to: 'api/v1/search#item_show'
   get '/api/v1/merchants/find_all', to: 'api/v1/search#merchant_index'
-  
+
   namespace :api do
     namespace :v1 do
       resources :merchants, only: %i[index show] do
         resources :items, controller: 'merchant_items'
       end
+      resources :items, only: %i[index show]
     end
   end
 end
