@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Merchant Model
 class Merchant < ApplicationRecord
   has_many :items
   has_many :invoice_items, through: :items

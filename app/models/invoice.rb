@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Invoice Model
 class Invoice < ApplicationRecord
   has_many :transactions
   has_many :invoice_items

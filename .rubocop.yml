@@ -5,4 +5,4 @@ AllCops:
     - 'config/application.rb'
     - 'db/*'
 Metrics/BlockLength:
-  IgnoredMethods: ['describe', 'context']
+  IgnoredMethods: ['describe', 'context', 'it']
