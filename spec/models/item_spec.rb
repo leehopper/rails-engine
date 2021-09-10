@@ -7,6 +7,7 @@ RSpec.describe Item, type: :model do
     it { should belong_to(:merchant) }
     it { should have_many(:invoice_items) }
     it { should have_many(:invoices).through(:invoice_items) }
+    it { should have_many(:transactions).through(:invoices) }
   end
 
   describe 'validations' do
@@ -18,6 +19,29 @@ RSpec.describe Item, type: :model do
 
     context 'numericality_of' do
       it { should validate_numericality_of(:unit_price) }
+    end
+  end
+
+  describe 'class methods' do
+    describe '#by_revenue' do
+      it 'returns items ranked by revenue' do
+        i1 = create(:invoice, :with_transactions)
+        i2 = create(:invoice, :with_transactions)
+        i3 = create(:invoice, :with_transactions)
+        i4 = create(:invoice, :with_transactions)
+        i5 = create(:invoice, :with_transactions)
+
+        ii1 = create(:invoice_item, quantity: 10, unit_price: 5, invoice: i1)
+        ii2 = create(:invoice_item, quantity: 5, unit_price: 5, invoice: i2)
+        ii3 = create(:invoice_item, quantity: 10, unit_price: 10, invoice: i3)
+        ii4 = create(:invoice_item, quantity: 1, unit_price: 1, invoice: i4)
+        ii5 = create(:invoice_item, quantity: 15, unit_price: 10, invoice: i5)
+
+        expect(Item.by_revenue(4).first.revenue).to eq(150)
+        expect(Item.by_revenue(4).second.revenue).to eq(100)
+        expect(Item.by_revenue(4).third.revenue).to eq(50)
+        expect(Item.by_revenue(4).last.revenue).to eq(25)
+      end
     end
   end
 end
